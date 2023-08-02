@@ -1,0 +1,46 @@
+Hal pertama yang harus dilakukan : Menginstal express generator
+https://expressjs.com/en/starter/generator.html
+ 
+Install or Membuat project di express js
+express --no-view service-media -> no view karna tidak menggunakan view dan berfokus ke API
+
+Install npm 
+npm install
+
+Install env
+npm install dotenv --save
+
+install axios : axios adalah library yang digunakan untuk mensimpelkan http request ke suatu client
+npm install axios --save 
+
+Menghapus view
+express --no-view -api-gateway
+
+install sequelize -> orm yang digunakan untuk database khusus untuk nodejs
+npm install sequelize sequelize-cli --save
+  
+Cek sequelize 
+npx sequelize -> Untuk melihat perintah-perintah yang diperlukan
+npx sequelize init -> memunculkan folder migrations dan model
+
+Membuat table di migration
+npx sequelize migration:create --name=create-table-media
+
+setelah tabel berhasil dibuat dan sudah di konfigurasi isi tablenya maka selanjutnya melakukan perintah 
+npx sequelize db:migrate
+jika muncul error please install mysql2, jalankan perintah berikut : 
+npm install mysql2 --save 
+setelah itu jalan kan kembali migrate
+
+Setelah melakukan migrasi, selanjutnya melakukan konfigurasi model
+
+setelah migrasi dan model berhasil dilakukan, selanjutnya masuk ke routes 
+
+install nodemon untuk reload otomatis
+npm install -g nodemon
+
+Untuk mengecek data dengan type base64 dan melakukan upload data dengan type base64
+npm install is-base64 base64-img --save
+
+konfigurasi seed : 
+jika ingin membuat password pada seed, silahkan gunakan bcrypt, dengan cara "npm install bcrypt --save"
